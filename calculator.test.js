@@ -59,3 +59,7 @@ test('division works with negative values', () => {
 test('division works with one negative & one positive value', () => {
   expect(calculator.divide(-20, 5)).toBe(-4)
 });
+
+test('returns error when dividing by 0', () => {
+  expect(calculator.divide(20, 0)).toMatch(/Cannot divide a number by 0/)
+});
