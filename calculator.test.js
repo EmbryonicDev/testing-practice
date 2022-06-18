@@ -21,3 +21,7 @@ test('returns error if an argument is not a number', () => {
 test('subtraction works with negative values', () => {
   expect(calculator.subtract(-4, -5)).toBe(1)
 });
+
+test('subtraction works with one negative & one positive value', () => {
+  expect(calculator.subtract(-4, 5)).toBe(-9)
+});
