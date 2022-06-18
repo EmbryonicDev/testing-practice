@@ -10,4 +10,8 @@ test('reverse multiple word string', () => {
 
 test('reverse & removes extra white spaces', () => {
   expect(reverse('  devomer   secaps etihw dna desrever  ')).toMatch(/reversed and white spaces removed/)
+});
+
+test('reverse string of numbers', () => {
+  expect(reverse('54321')).toMatch(/12345/)
 })
