@@ -35,6 +35,15 @@ const calculator = {
     } else {
       return this.error;
     }
+  },
+
+  divide(a, b) {
+    this.checkIfNumber(a, b);
+    if (this.numberTrue) {
+      return a / b;
+    } else {
+      return this.error;
+    }
   }
 };
 

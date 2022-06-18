@@ -42,3 +42,20 @@ test('multiplication works with negative values', () => {
 test('multiplication works with one negative & one positive value', () => {
   expect(calculator.multiply(-4, 5)).toBe(-20)
 });
+
+// division
+test('divide one positive number from another', () => {
+  expect(calculator.divide(9, 3)).toBe(3);
+});
+
+test('returns error if an argument is not a number', () => {
+  expect(calculator.divide('6', 3)).toMatch(/Please enter two numbers/)
+});
+
+test('division works with negative values', () => {
+  expect(calculator.divide(-20, -5)).toBe(4)
+});
+
+test('division works with one negative & one positive value', () => {
+  expect(calculator.divide(-20, 5)).toBe(-4)
+});
