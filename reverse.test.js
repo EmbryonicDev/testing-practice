@@ -14,4 +14,8 @@ test('reverse & removes extra white spaces', () => {
 
 test('reverse string of numbers', () => {
   expect(reverse('54321')).toMatch(/12345/)
-})
+});
+
+test('reverse numbers & return as string', () => {
+  expect(reverse(54321)).toMatch(/12345/)
+});
