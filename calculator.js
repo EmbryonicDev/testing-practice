@@ -26,6 +26,15 @@ const calculator = {
     } else {
       return this.error;
     }
+  },
+
+  multiply(a, b) {
+    this.checkIfNumber(a, b);
+    if (this.numberTrue) {
+      return a * b;
+    } else {
+      return this.error;
+    }
   }
 };
 

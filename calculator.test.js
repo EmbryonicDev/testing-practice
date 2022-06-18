@@ -25,3 +25,20 @@ test('subtraction works with negative values', () => {
 test('subtraction works with one negative & one positive value', () => {
   expect(calculator.subtract(-4, 5)).toBe(-9)
 });
+
+// multiplication
+test('multiply one positive number from another', () => {
+  expect(calculator.multiply(9, 3)).toBe(27);
+});
+
+test('returns error if an argument is not a number', () => {
+  expect(calculator.multiply('6', 3)).toMatch(/Please enter two numbers/)
+});
+
+test('multiplication works with negative values', () => {
+  expect(calculator.multiply(-4, -5)).toBe(20)
+});
+
+test('multiplication works with one negative & one positive value', () => {
+  expect(calculator.multiply(-4, 5)).toBe(-20)
+});
