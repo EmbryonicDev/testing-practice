@@ -17,3 +17,7 @@ test('subtract one positive number from another', () => {
 test('returns error if an argument is not a number', () => {
   expect(calculator.subtract('6', 3)).toMatch(/Please enter two numbers/)
 });
+
+test('subtraction works with negative values', () => {
+  expect(calculator.subtract(-4, -5)).toBe(1)
+});
