@@ -5,6 +5,14 @@ const calculator = {
     } else {
       return a + b;
     }
+  },
+
+  subtract(a, b) {
+    if (a + b !== parseInt(a + b)) {
+      return 'Please enter two numbers'
+    } else {
+      return a - b;
+    }
   }
 };
 
