@@ -1,17 +1,30 @@
 const calculator = {
-  add(a, b) {
+  error: 'Please enter two numbers',
+  numberTrue: false,
+
+  checkIfNumber(a, b) {
     if (a + b !== parseInt(a + b)) {
-      return 'Please enter two numbers'
+      this.numberTrue = false;
     } else {
+      this.numberTrue = true;
+    }
+  },
+
+  add(a, b) {
+    this.checkIfNumber(a, b);
+    if (this.numberTrue) {
       return a + b;
+    } else {
+      return this.error;
     }
   },
 
   subtract(a, b) {
-    if (a + b !== parseInt(a + b)) {
-      return 'Please enter two numbers'
-    } else {
+    this.checkIfNumber(a, b);
+    if (this.numberTrue) {
       return a - b;
+    } else {
+      return this.error;
     }
   }
 };
