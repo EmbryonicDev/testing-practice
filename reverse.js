@@ -1,4 +1,5 @@
 function reverse(string) {
+  if (string != NaN) string = String(string);
   return string.split('')
     .reverse()
     .join('')
