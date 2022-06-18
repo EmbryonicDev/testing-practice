@@ -38,11 +38,15 @@ const calculator = {
   },
 
   divide(a, b) {
-    this.checkIfNumber(a, b);
-    if (this.numberTrue) {
-      return a / b;
+    if (b === 0) {
+      return 'Cannot divide a number by 0'
     } else {
-      return this.error;
+      this.checkIfNumber(a, b);
+      if (this.numberTrue) {
+        return a / b;
+      } else {
+        return this.error;
+      }
     }
   }
 };
