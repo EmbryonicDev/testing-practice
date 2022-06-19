@@ -11,7 +11,7 @@ const fillAlphaKeys = () => {
   caesarKeys = alphaKeys;
 };
 
-const caesarCipher = async (string, key) => {
+const caesarCipher = (string, key) => {
   fillAlphaKeys();
   newAlphaObjArr(alpha, alphaKeys, masterKeyObj)
   newKeys(key);
