@@ -4,19 +4,19 @@ const masterKeyObj = [];
 const caesarKeyObj = [];
 let caesarKeys = [];
 
-const fillAlphaKeys = () => {
-  for (let i = 1; i < 27; i += 1) {
-    alphaKeys.push(i)
-  }
-  caesarKeys = alphaKeys;
-};
-
 const caesarCipher = (string, key) => {
   fillAlphaKeys();
   newAlphaObjArr(alpha, alphaKeys, masterKeyObj)
   newKeys(key);
   newAlphaObjArr(alpha, caesarKeys, caesarKeyObj);
   return translateLetters(string);
+};
+
+const fillAlphaKeys = () => {
+  for (let i = 1; i < 27; i += 1) {
+    alphaKeys.push(i)
+  }
+  caesarKeys = alphaKeys;
 };
 
 const newAlphaObj = (letter, key, keyObj) => {
