@@ -16,9 +16,7 @@ const caesarCipher = (string, key) => {
   newAlphaObjArr(alpha, alphaKeys, masterKeyObj)
   newKeys(key);
   newAlphaObjArr(alpha, caesarKeys, caesarKeyObj);
-
-  console.log(translateLetters(string) + ' = ' + typeof translateLetters(string));
-  translateLetters(string);
+  return translateLetters(string);
 };
 
 const newAlphaObj = (letter, key, keyObj) => {
