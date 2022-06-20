@@ -18,3 +18,8 @@ test('sentence with punctuation', () => {
   expect(caesarCipher('Sentence: with punctuation!', 9))
     .toMatch(/Bnwcnwln: frcq ydwlcdjcrxw!/)
 });
+
+test('sentence with numbers', () => {
+  expect(caesarCipher('This sentence, has the number 5830.', 16))
+    .toMatch(/Jxyi iudjudsu, xqi jxu dkcruh 5830./)
+});
