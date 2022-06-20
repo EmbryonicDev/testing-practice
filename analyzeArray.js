@@ -1,20 +1,18 @@
 const analyzeArray = (arrOfNumbers) => {
-  let returnValue = null;
-
+  // Check if array is empty
   if (arrOfNumbers.length < 1)
     return 'Please do not enter an empty array';
 
   if (allNumbersTrue(arrOfNumbers)) {
-    returnValue = {
+    return {
       average: getAverage(arrOfNumbers),
       min: getMin(arrOfNumbers),
       max: getMax(arrOfNumbers),
       length: arrOfNumbers.length
     }
   } else {
-    returnValue = 'Please only enter an array with NUMBERS';
+    return 'Please only enter an array with NUMBERS';
   }
-  return returnValue;
 }
 
 const allNumbersTrue = (arr) => {
