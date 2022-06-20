@@ -14,7 +14,7 @@ const caesarCipher = (string, key) => {
 
 const fillAlphaKeys = () => {
   for (let i = 1; i < 27; i += 1) {
-    alphaKeys.push(i)
+    alphaKeys.push(i);
   }
   caesarKeys = alphaKeys;
 };
@@ -24,7 +24,7 @@ const newAlphaObj = (letter, key, keyObj) => {
     letter,
     key
   }
-  keyObj.push(el)
+  keyObj.push(el);
 };
 
 const newAlphaObjArr = (alphaArr, keyArr, keyObj) => {
@@ -46,15 +46,19 @@ const newKeys = (shiftCount) => {
 const translateLetters = (string) => {
   string = string.split('');
   for (let i = 0; i < string.length; i += 1) {
-    const alphaKey = masterKeyObj
-      .filter(obj => obj.letter == string[i])[0]
-      .key;
+    if (!/^[a-zA-Z]+$/.test(string[i])) {
+      string[i] = string[i];
+    } else {
+      const alphaKey = masterKeyObj
+        .filter(obj => obj.letter == string[i])[0]
+        .key;
 
-    const caesarLetter = caesarKeyObj
-      .filter(obj => obj.key == alphaKey)[0]
-      .letter;
+      const caesarLetter = caesarKeyObj
+        .filter(obj => obj.key == alphaKey)[0]
+        .letter;
 
-    string[i] = caesarLetter
+      string[i] = caesarLetter;
+    }
   }
   return string.join('');
 };
