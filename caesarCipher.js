@@ -5,7 +5,6 @@ const caesarKeyObj = [];
 let caesarKeys = [];
 let charCase = null;
 
-
 const caesarCipher = (string, key) => {
   fillAlphaKeys();
   newAlphaObjArr(alpha, alphaKeys, masterKeyObj)
@@ -15,10 +14,12 @@ const caesarCipher = (string, key) => {
 };
 
 const fillAlphaKeys = () => {
-  for (let i = 1; i < 27; i += 1) {
-    alphaKeys.push(i)
+  if (alphaKeys.length < 1) {
+    for (let i = 1; i < 27; i += 1) {
+      alphaKeys.push(i)
+    }
+    caesarKeys = alphaKeys;
   }
-  caesarKeys = alphaKeys;
 };
 
 const newAlphaObj = (letter, key, keyObj) => {
