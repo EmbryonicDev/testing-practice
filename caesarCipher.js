@@ -1,4 +1,4 @@
-let alpha = 'abcdefghijklmnopqrstuvwxyz';
+const alpha = 'abcdefghijklmnopqrstuvwxyz';
 const alphaKeys = [];
 const masterKeyObj = [];
 const caesarKeyObj = [];
