@@ -3,3 +3,7 @@ const caesarCipher = require('./caesarCipher');
 test('tests wrapping from z to a', () => {
   expect(caesarCipher("xyz", 1)).toMatch(/yza/)
 });
+
+test('test with multiple words', () => {
+  expect(caesarCipher('this works just fine', 1)).toMatch(/uijt xpslt kvtu gjof/)
+});
