@@ -1,5 +1,9 @@
 const analyzeArray = (arrOfNumbers) => {
   let returnValue = null;
+
+  if (arrOfNumbers.length < 1)
+    return 'Please do not enter an empty array';
+
   if (allNumbersTrue(arrOfNumbers)) {
     returnValue = {
       average: getAverage(arrOfNumbers),
@@ -8,7 +12,7 @@ const analyzeArray = (arrOfNumbers) => {
       length: arrOfNumbers.length
     }
   } else {
-    returnValue = 'Please only enter an array with NUMBERS'
+    returnValue = 'Please only enter an array with NUMBERS';
   }
   return returnValue;
 }
