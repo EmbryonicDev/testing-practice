@@ -13,3 +13,8 @@ test('Case Sensitive Test', () => {
   expect(caesarCipher('Title Case Test', 5))
     .toMatch(/Ynyqj Hfxj Yjxy/)
 });
+
+test('sentence with punctuation', () => {
+  expect(caesarCipher('Sentence: with punctuation!', 9))
+    .toMatch(/Bnwcnwln: frcq ydwlcdjcrxw!/)
+});
