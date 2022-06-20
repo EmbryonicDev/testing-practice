@@ -3,6 +3,8 @@ const alphaKeys = [];
 const masterKeyObj = [];
 const caesarKeyObj = [];
 let caesarKeys = [];
+let charCase = null;
+
 
 const caesarCipher = (string, key) => {
   fillAlphaKeys();
@@ -14,7 +16,7 @@ const caesarCipher = (string, key) => {
 
 const fillAlphaKeys = () => {
   for (let i = 1; i < 27; i += 1) {
-    alphaKeys.push(i);
+    alphaKeys.push(i)
   }
   caesarKeys = alphaKeys;
 };
@@ -24,7 +26,7 @@ const newAlphaObj = (letter, key, keyObj) => {
     letter,
     key
   }
-  keyObj.push(el);
+  keyObj.push(el)
 };
 
 const newAlphaObjArr = (alphaArr, keyArr, keyObj) => {
@@ -43,12 +45,27 @@ const newKeys = (shiftCount) => {
   };
 };
 
+const storeCase = (char) => {
+  char === char.toUpperCase()
+    ? charCase = 'upperCase'
+    : charCase = 'lowerCase'
+};
+
+const restoreCase = (char) => {
+  if (charCase == 'upperCase')
+    char = char.toUpperCase();
+  return char
+};
+
 const translateLetters = (string) => {
   string = string.split('');
   for (let i = 0; i < string.length; i += 1) {
     if (!/^[a-zA-Z]+$/.test(string[i])) {
       string[i] = string[i];
     } else {
+      storeCase(string[i]);
+      string[i] = string[i].toLowerCase();
+
       const alphaKey = masterKeyObj
         .filter(obj => obj.letter == string[i])[0]
         .key;
@@ -57,9 +74,10 @@ const translateLetters = (string) => {
         .filter(obj => obj.key == alphaKey)[0]
         .letter;
 
-      string[i] = caesarLetter;
+      string[i] = restoreCase(caesarLetter);
     }
   }
+  console.log(string.join(''));
   return string.join('');
 };
 
