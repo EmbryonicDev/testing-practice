@@ -31,8 +31,10 @@ const newAlphaObj = (letter, key, keyObj) => {
 };
 
 const newAlphaObjArr = (alphaArr, keyArr, keyObj) => {
-  alphaArr = alphaArr.split('');
+  // clear keyObj first
+  while (keyObj.length > 0) keyObj.pop();
 
+  alphaArr = alphaArr.split('');
   for (let i = 0; i < alphaArr.length; i += 1) {
     newAlphaObj(alphaArr[i], keyArr[i], keyObj)
   }
