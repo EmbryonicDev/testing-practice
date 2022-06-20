@@ -1,10 +1,24 @@
 const analyzeArray = (arrOfNumbers) => {
-  return {
-    average: getAverage(arrOfNumbers),
-    min: getMin(arrOfNumbers),
-    max: getMax(arrOfNumbers),
-    length: arrOfNumbers.length
+  let returnValue = null;
+  if (allNumbersTrue(arrOfNumbers)) {
+    returnValue = {
+      average: getAverage(arrOfNumbers),
+      min: getMin(arrOfNumbers),
+      max: getMax(arrOfNumbers),
+      length: arrOfNumbers.length
+    }
+  } else {
+    returnValue = 'Please only enter an array with NUMBERS'
   }
+  return returnValue;
+}
+
+const allNumbersTrue = (arr) => {
+  let allNumbers = true;
+  arr.forEach(element => {
+    if (element !== parseInt(element)) allNumbers = false;
+  });
+  return allNumbers;
 }
 
 const getAverage = (arrOfNumbers) => {
